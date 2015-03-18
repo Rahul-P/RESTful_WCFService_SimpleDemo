@@ -6,17 +6,18 @@ namespace TweetBL
 
     // This is our Data Object
 
-    [Serializable]
-    [DataContract]
+    [Serializable] 
     public class Tweet
     {
-        [DataMember]
+     
         public int Id { get; set; }
-
-        [DataMember]
+  
         public string PostedBy { get; set; }
-
-        [DataMember]
+       
         public string Text { get; set; }
     }
 }
+
+
+
+
