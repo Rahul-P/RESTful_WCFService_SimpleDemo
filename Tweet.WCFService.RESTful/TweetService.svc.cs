@@ -21,7 +21,7 @@ namespace Tweet.WCFService.RESTful
         //     and include the following line in the operation body:
         //         WebOperationContext.Current.OutgoingResponse.ContentType = "text/xml";
         [OperationContract]
-        [WebGet(UriTemplate="/DoWork")]
+        [WebGet(UriTemplate = "/GetSomethingDone")]
         public void DoWork()
         {
             // Add your operation implementation here
