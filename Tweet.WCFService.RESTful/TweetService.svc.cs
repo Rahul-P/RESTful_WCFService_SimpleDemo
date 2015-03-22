@@ -1,33 +1,60 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.ServiceModel.Activation;
-using System.ServiceModel.Web;
-using System.Text;
-
+﻿
 namespace Tweet.WCFService.RESTful
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ServiceModel;
+    using System.ServiceModel.Activation;
+    using System.ServiceModel.Web;
+    using TweetBL;
+
     [ServiceContract(Namespace = "")]
     [AspNetCompatibilityRequirements
         (RequirementsMode = 
         AspNetCompatibilityRequirementsMode.Allowed)]
     public class TweetService
-    {
-        // To use HTTP GET, add [WebGet] attribute. (Default ResponseFormat is WebMessageFormat.Json)
-        // To create an operation that returns XML,
-        //     add [WebGet(ResponseFormat=WebMessageFormat.Xml)],
-        //     and include the following line in the operation body:
-        //         WebOperationContext.Current.OutgoingResponse.ContentType = "text/xml";
-        [OperationContract]
-        [WebGet(UriTemplate = "/GetSomethingDone")]
-        public void DoWork()
+    {         
+        private TweetBL.ManageTweet _businessLayerTweetService;
+
+        public TweetService()
         {
-            // Add your operation implementation here
-            return;
+            _businessLayerTweetService = new TweetBL.ManageTweet();
+        }
+     
+        [WebGet(UriTemplate = "/GetTweets")]
+        public IList<Tweet> GetTweets()
+        {
+            return _businessLayerTweetService.GetTweets();
         }
 
-        // Add more operations here and mark them with [OperationContract]
+        [WebGet(UriTemplate = "/Tweet/{tweetId}")]
+        public Tweet GetTweetByID(string tweetId)
+        {
+            int tweetIdParsedToInt;
+            Int32.TryParse(tweetId, out tweetIdParsedToInt);
+
+            return _businessLayerTweetService.GetTweetById(tweetIdParsedToInt);
+        }
+
+        [WebInvoke(UriTemplate = "/Tweets")]
+        public void CreateTweet(Tweet newTweet)
+        {
+            _businessLayerTweetService.CreateTweet(newTweet);
+        }
+
+        [WebInvoke(Method = "PUT", UriTemplate = "/Tweet")]
+        public void UpdateTweet(Tweet updateTweet)
+        {
+            _businessLayerTweetService.UpdateTweet(updateTweet);
+        }
+
+        [WebInvoke(Method = "DELETE", UriTemplate = "/Tweet/{deleteTweetId}")]
+        public void DeleteTweet(string deleteTweetId)
+        {
+            int deleteTweetIdParsedToInt;
+            Int32.TryParse(deleteTweetId, out deleteTweetIdParsedToInt);
+
+            _businessLayerTweetService.DeleteTweet(deleteTweetIdParsedToInt);
+        }
     }
 }

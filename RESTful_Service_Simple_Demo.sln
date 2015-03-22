@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetBL", "TweetBL\TweetBL.csproj", "{E747D7A8-E718-41B2-AF76-A538452217DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweet.WCFService.RESTful", "Tweet.WCFService.RESTful\Tweet.WCFService.RESTful.csproj", "{E8D322DD-16A5-4F36-9CD9-0E784228771F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E747D7A8-E718-41B2-AF76-A538452217DB} = {E747D7A8-E718-41B2-AF76-A538452217DB}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
