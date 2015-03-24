@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tweet.WCFService.RESTful", 
 		{E747D7A8-E718-41B2-AF76-A538452217DB} = {E747D7A8-E718-41B2-AF76-A538452217DB}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetClient", "TweetClient\TweetClient.csproj", "{799B4977-F720-46B7-B3CE-7987E6179B32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{E8D322DD-16A5-4F36-9CD9-0E784228771F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E8D322DD-16A5-4F36-9CD9-0E784228771F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8D322DD-16A5-4F36-9CD9-0E784228771F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{799B4977-F720-46B7-B3CE-7987E6179B32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{799B4977-F720-46B7-B3CE-7987E6179B32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{799B4977-F720-46B7-B3CE-7987E6179B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{799B4977-F720-46B7-B3CE-7987E6179B32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
