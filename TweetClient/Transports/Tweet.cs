@@ -1,7 +1,7 @@
 ﻿
 namespace TweetClient.Transports
 {
-    using System;
+    using System;    
     using System.Xml.Serialization;
 
     [XmlRoot(Namespace = 
@@ -16,3 +16,6 @@ namespace TweetClient.Transports
         public string Text { get; set; }
     }
 }
+
+
+
